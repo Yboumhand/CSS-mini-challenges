@@ -1,0 +1,64 @@
+/* CSS reset */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --search-border: #bbb;
+  --search-focus-border: #3a71ca;
+}
+
+
+/* specific css styles */
+
+.container {
+  width: 80%;
+  padding: 2em;
+  margin: auto;
+  min-width: 320px;
+}
+
+/* w3.org accessibility snippet code, you can search for it */
+
+.search-label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#search-field {
+  font-size: 1.5rem;
+  padding-block: 10px; /* top and bottom */
+}
+
+.search-bar {
+  width: 30%;
+  border: 2px solid var(--search-border);
+  border-radius: 5px;
+  transition: all .3s ease-out;
+  outline: none;
+}
+
+/* whenever the user clicks the search bar the input takes the full width
+   of it's parent container in this case the container itself  */
+
+.search-bar:focus {
+  width: 100%;
+  border-color: var(--search-focus-border);
+}
+
+/* whenever the user clicks the searvh bar, i want you to hide the placeholder */
+
+
+.search-bar:focus::placeholder {
+  color: transparent;
+}
+/* we could use instead opacity: 0; */
